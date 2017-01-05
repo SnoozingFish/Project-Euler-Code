@@ -1,9 +1,8 @@
 import time
-start = time.time()
 
-alpha = 99
-beta = 99
-digits = 2
+alpha = 999
+beta = 999
+digits = 3
 bestGuess = 0
 
 while len(str(alpha)) == digits:
@@ -14,7 +13,7 @@ while len(str(alpha)) == digits:
     if guess > bestGuess:
       bestGuess, bestAlpha, bestBeta = guess, alpha, beta
   
-  if alpha == 10 and beta == 10:
+  if alpha == 100 and beta == 100:
     print("")
     print(str(bestGuess) + ", " + str(bestAlpha) + " * " + str(bestBeta))
     
@@ -22,7 +21,7 @@ while len(str(alpha)) == digits:
     print(str(end - start) + " seconds.")
     break
   
-  elif beta == 10:  
+  elif beta == 100:  
     alpha -= 1
     beta = alpha
   else:
