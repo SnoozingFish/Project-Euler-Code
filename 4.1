@@ -1,0 +1,30 @@
+import time
+start = time.time()
+
+alpha = 99
+beta = 99
+digits = 2
+bestGuess = 0
+
+while len(str(alpha)) == digits:
+  guess = alpha * beta
+  
+  if str(guess) == str(guess)[::-1]:
+    print(str(alpha) + " * " + str(beta) + " = " + str(alpha * beta))
+    if guess > bestGuess:
+      bestGuess, bestAlpha, bestBeta = guess, alpha, beta
+  
+  if alpha == 10 and beta == 10:
+    print("")
+    print(str(bestGuess) + ", " + str(bestAlpha) + " * " + str(bestBeta))
+    
+    end = time.time()
+    print(str(end - start) + " seconds.")
+    break
+  
+  elif beta == 10:  
+    alpha -= 1
+    beta = alpha
+  else:
+    beta -= 1 
+
