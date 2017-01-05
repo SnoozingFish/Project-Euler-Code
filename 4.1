@@ -1,8 +1,10 @@
 import time
+import math
 
-alpha = 999
-beta = 999
-digits = 3
+alpha = 99
+beta = 99
+digits = 2
+limiter = 10
 bestGuess = 0
 
 while len(str(alpha)) == digits:
@@ -10,20 +12,19 @@ while len(str(alpha)) == digits:
   
   if str(guess) == str(guess)[::-1]:
     print(str(alpha) + " * " + str(beta) + " = " + str(alpha * beta))
+    
     if guess > bestGuess:
       bestGuess, bestAlpha, bestBeta = guess, alpha, beta
+      #limiter = round(math.sqrt(bestGuess))
+      
   
-  if alpha == 100 and beta == 100:
+  if alpha == limiter and beta == limiter:
     print("")
     print(str(bestGuess) + ", " + str(bestAlpha) + " * " + str(bestBeta))
-    
-    end = time.time()
-    print(str(end - start) + " seconds.")
     break
   
-  elif beta == 100:  
+  elif beta == limiter:  
     alpha -= 1
     beta = alpha
   else:
     beta -= 1 
-
