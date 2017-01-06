@@ -1,0 +1,24 @@
+import time
+start = time.time()
+
+primes = [2]
+goal = 50000
+number = 3
+while True:
+  if len(primes) == goal:
+    print("")
+    print("Goal reached.")
+    print(str(primes[goal-1]))
+    break
+  else:
+    for i in range(0, len(primes)):
+      if primes[i] < number/2:
+        if number % primes[i] == 0:
+          number += 2
+          break
+      else:
+        primes.append(number)
+        number += 2
+        break
+
+print(str(time.time() - start) + " seconds")
