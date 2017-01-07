@@ -2,7 +2,7 @@ import time
 start = time.time()
 
 primes = [2]
-goal = 50000
+goal = 10001
 number = 3
 while True:
   if len(primes) == goal:
